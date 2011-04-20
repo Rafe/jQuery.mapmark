@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>popout testing</title>
+    <style type="text/css">
+      #canvas{
+        height:412px;
+        width:915px;
+        background-image: url('canvas.jpg'); 
+      }
+      .mark{
+        width:20px;
+        height:20px;
+        position:absolute;
+        cursor:pointer;
+        -webkit-transition: opacity .5s ease;
+        -moz-transition: opacity .5s ease;
+        transition: opacity .5s ease;
+        z-index:100;
+      }
+      .markshape{
+        top:5px;
+        left:5px;
+        width:10px;
+        height:10px;
+        -webkit-border-radius:20px;
+        -moz-border-radius:20px;
+        border-radius:20px;
+        background: #FF2400;
+        position:relative;
+      }
+      .popout{
+        width:217px;
+        height:60px;
+        position:absolute;
+        background-color:#404040;
+        display:hidden;
+        opacity:0;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+        border-radius:7px;
+        -webkit-gradient(linear, left top, left bottom, from(rgba(40, 40, 40, .9)), to(rgba(0, 0, 0, .8)));
+        -webkit-transition-property: -webkit-transform, opacity;
+        -webkit-transition-duration: .5s;
+        -webkit-transform-origin: center bottom;
+        -webkit-transform: translateY(20px);
+        -webkit-transform-origin-x: 50%;
+        -webkit-transform-origin-y: 100%;
+        -moz-gradient(linear, left top, left bottom, from(rgba(40, 40, 40, .9)), to(rgba(0, 0, 0, .8)));
+        -moz-transition-property: -moz-transform, opacity;
+        -moz-transition-duration: .5s;
+        -moz-transform-origin: center bottom;
+        -moz-transform: translateY(20px);
+        -moz-transform-origin-x: 50%;
+        -moz-transform-origin-y: 100%;
+        gradient(linear, left top, left bottom, from(rgba(40, 40, 40, .9)), to(rgba(0, 0, 0, .8)));
+        transition-property: transform, opacity;
+        transition-duration: .5s;
+        transform-origin: center bottom;
+        transform: translateY(20px);
+        transform-origin-x: 50%;
+        transform-origin-y: 100%;
+      }
+      #canvas .popout.popped {
+        -webkit-transform: translateY(0px);
+        opacity: 1; 
+      }
+      #canvas .popout.leaving {
+        -webkit-transform: translateY(-20px);
+        opacity: 0; 
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jQuery.markmap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      $(function(){
+        $(".mark").markmap();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="canvas">
+      <div id="mark-1" style="top:200px;left:50px;" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-2" style="top:150px;left:20px;" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-3" style="top:200px;left:500px;" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-4" style="top:250px;left:750px;" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-5" style="top:300px;left:600px" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-6" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="mark-7" class="mark">
+        <div class="markshape"></div>
+      </div>
+      <div id="popout-1" class="popout">testing...</div>
+      <div id="popout-2" class="popout">testugasdjaldjalskjdlajdlasd/</div>
+      <div id="popout-3" class="popout">lor asdg sdfs sjldfks sdkfjsdlfj</div>
+      <div id="popout-4" class="popout">slkdflsdfjl sjdfksjflsdf sdlfkjsdlfk</div>
+      <div id="popout-5" class="popout"> skdjfljslkfs sdkjflskjdf sdfkjsldfkj</div>
+      <div id="popout-6" class="popout">skdfjlskdjflsdf sdfkjsldkfjlskf skdjflskfjlskdjf</div>
+      <div id="popout-7" class="popout"></div>
+    </div>
+
+
+  </body>
+</html>
