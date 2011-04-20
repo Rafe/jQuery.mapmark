@@ -57,7 +57,7 @@
     setTimeout(restoreMarker,500);
   }
 
-  $.fn.markmap = function(){
+  $.fn.mapmark = function(){
     markers = this;
     this.hover(showPopout,hidePopout);
   }
