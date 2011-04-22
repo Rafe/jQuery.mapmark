@@ -11,6 +11,7 @@ $('.marker').mapmark('.popout');
 todo
 ---------------------------
 
-+ dynamic detect width
 + bug of overwrite marker
++ dynamic detect width to display things in the canvas
++ detect popout and keep it displaying during the popout
 
