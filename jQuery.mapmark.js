@@ -11,7 +11,7 @@
   });
 
   //cache objects and setting
-  var markers,popouts,
+  var markers,popouts,isInPopout = false,
       setting = {
     markerHeight : 0,
     markerWidth : 0,
@@ -66,6 +66,12 @@
     var popoutid = setting.popoutPrefix+"-"+id.split("-")[1];
     return $(popoutid);
   }
+  
+  //return the matched marker for corresponding popoutid
+  var matchMarker = function(id){
+    var markerid = setting.markerPrefix+"-"+id.split("-")[1];
+    return $(markerid);
+  }
 
   //set other markers's z-index to 0 to avoid the popout overwrited by marker
   var setMarkerPriority = function(self){
@@ -90,6 +96,7 @@
     }
 
     popout.show(); 
+    //popout.hover(keepPopout,outPopout);
 
     var offset = self.offset();
     popout.css(initState(offset,popout))
@@ -97,33 +104,62 @@
   }
 
   var hidePopout = function(){
+    if(isInPopout) return;
     var self = $(this);
     var popout = matchPopout(self.attr("id"));
     var hideAndRemove = function(){
       popout.animate(endState(self.offset(),popout),setting.speed,setting.easeOut,self.hide);
     }
-    activeHiding = setTimeout(hideAndRemove,setting.speed);
-    setTimeout(restoreMarker,setting.speed);
+    activeHiding = setTimeout(hideAndRemove,200);
+    setTimeout(restoreMarker,200 + setting.speed);
+  }
+
+  var keepPopout = function(){
+    if (activeHiding){
+      clearTimeout(activeHiding);
+    }
+    isInPopout = true;
+  }
+  
+  var outPopout = function(){
+    var self = $(this);
+    var marker = matchMarker(self.attr("id"));
+    if (activeHiding){
+      activeHiding = false;
+    }
+    hidePopout.call(marker);
   }
 
   //main function: 
   //usage: $("markers").mapmark("popouts-class");
-  $.fn.mapmark = function(popoutClass,options){
-    $.extend(setting,options)
-    markers = this;
-    
-    popouts = $(popoutClass)
+  $.fn.mapmark = function(markerClass,popoutClass,options){
+    //set options
+    $.extend(setting,options);
+
+    //record classes for manipulate
+    canvas = $(this);
+    markers = $(markerClass);
+    popouts = $(popoutClass);
     
     if(popouts.length <= 0){
       throw "Empty popout objects Error";
     }
 
+    if(markers.length <= 0){
+      throw "Empty markers objects Error";
+    }
+
     //setting the class name of popout and id format for popout
     setting.popoutClass = popoutClass;
     setting.popoutPrefix = "#"+popouts.first().attr("id").split("-")[0];
+    setting.markerClass = markerClass;
+    setting.markerPrefix = "#"+markers.first().attr("id").split("-")[0];
 
     init(markers,popouts);
-    this.toggle(showPopout,hidePopout);
-    //this.hover(showPopout,hidePopout);
+    markers.toggle(showPopout,hidePopout);
+    canvas.click(function(){
+      clearActivePopout();
+    });
+    //markers.hover(showPopout,hidePopout);
   }
 })(jQuery)

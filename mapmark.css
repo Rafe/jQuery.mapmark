@@ -3,6 +3,7 @@
   width:915px;
   background-image:url("galapagos360_ships_main.jpg");
 }
+
 .mark{
   width:30px;
   height:30px;
@@ -34,7 +35,7 @@
 	border-radius: 20px;
 	border: 3px solid white;
 	opacity: 0;
-	
+	z-index:0;
 	-webkit-animation-name: 'blip';
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
@@ -50,9 +51,15 @@
 .popout-inner{
   padding:7px;
   background-color:#FFF;
-  -webkit-border-radius:7px;
-  -moz-border-radius:7px;
-  border-radius:7px;
+  -webkit-border-bottom-left-radius:7px;
+  -webkit-border-bottom-right-radius:7px;
+  -moz-border-bottom-left-radius:7px;
+  -moz-border-bottom-right-radius:7px;
+  border-bottom-left-radius:7px;
+  border-bottom-right-radius:7px;
+  -webkit-box-shadow:0px 1px 0px,#AAA;
+  -moz-box-shadow:0px 1px 0px,#AAA;
+  box-shadow:0px 1px 0px #AAA;
 }
 
 .popout-arrow{
