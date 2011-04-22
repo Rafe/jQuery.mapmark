@@ -32,8 +32,8 @@
   //animation states
   var initState = function(offset,popout){
     return {
-      left:offset.left - (popout.outerWidth() / 2) + (setting.markerWidth / 2),
-      top:offset.top - popout.outerHeight() + setting.markerHeight,
+      left:offset.left ,
+      top:offset.top ,
       diaplay:"block",
       visibility:"visible",
       opacity:0
@@ -42,14 +42,14 @@
 
   midState = function(offset,popout){
     return {
-      top:offset.top - popout.outerHeight(),
+      top:offset.top + (setting.markerHeight / 2),
       opacity:1
     }
   },
 
   endState = function(offset,popout){
     return {
-      top:offset.top - popout.outerHeight() - setting.markerHeight,
+      top:offset.top + setting.markerHeight,
       opacity:0
     }
   }
@@ -100,11 +100,12 @@
     var self = $(this);
     var popout = matchPopout(self.attr("id"));
     var hideAndRemove = function(){
-      popout.animate(endState(self.offset(),popout),setting.speed,setting.easeOut);
+      popout.animate(endState(self.offset(),popout),setting.speed,setting.easeOut,self.hide);
     }
     activeHiding = setTimeout(hideAndRemove,setting.speed);
     setTimeout(restoreMarker,setting.speed);
   }
+
   //main function: 
   //usage: $("markers").mapmark("popouts-class");
   $.fn.mapmark = function(popoutClass,options){
@@ -122,6 +123,7 @@
     setting.popoutPrefix = "#"+popouts.first().attr("id").split("-")[0];
 
     init(markers,popouts);
-    this.hover(showPopout,hidePopout);
+    this.toggle(showPopout,hidePopout);
+    //this.hover(showPopout,hidePopout);
   }
 })(jQuery)

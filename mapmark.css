@@ -1,7 +1,7 @@
 #canvas{
   height:412px;
   width:915px;
-  background-color:gray;
+  background-image:url("galapagos360_ships_main.jpg");
 }
 .mark{
   width:30px;
@@ -14,13 +14,31 @@
 .markshape{
   top:7px;
   left:7px;
-  width:15px;
-  height:15px;
-  -webkit-border-radius:20px;
-  -moz-border-radius:20px;
-  border-radius:20px;
-  background: #FF2400;
+  width:5px;
+  height:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  background: #FFFFFF;
   position:relative;
+}
+
+.markglow{
+  position: absolute;
+	top: -9px;
+	left: -9px;
+	width: 30px;
+	height: 30px;	
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: 3px solid white;
+	opacity: 0;
+	
+	-webkit-animation-name: 'blip';
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
 }
 
 .popout{
@@ -31,13 +49,36 @@
 
 .popout-inner{
   padding:7px;
-  background-color:#404040;
+  background-color:#FFF;
   -webkit-border-radius:7px;
   -moz-border-radius:7px;
   border-radius:7px;
-  border: 2px solid white;
 }
 
 .popout-arrow{
-  left:45%;
+  position:relative;
+  height:4px;
+  width:11px;
+  left:4px;
+  background-image:url("arrow.png");
+}
+
+@-webkit-keyframes 'blip'
+{		
+	0% {
+		-webkit-transform: scale(.1);	
+		opacity: 0;
+	}
+	1% {
+		-webkit-transform: scale(.1);	
+		opacity: .6;
+	}
+	60% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
 }
