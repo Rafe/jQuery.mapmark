@@ -116,6 +116,7 @@
     if(popouts.length <= 0){
       throw "Empty popout objects Error";
     }
+
     //setting the class name of popout and id format for popout
     setting.popoutClass = popoutClass;
     setting.popoutPrefix = "#"+popouts.first().attr("id").split("-")[0];
@@ -123,5 +124,4 @@
     init(markers,popouts);
     this.hover(showPopout,hidePopout);
   }
-
 })(jQuery)

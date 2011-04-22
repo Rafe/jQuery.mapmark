@@ -3,8 +3,14 @@ jQuery.markmap
 
 map marker to popout in parent div
 
+usage:
+---------------------------
+
+$('.marker').mapmark('.popout');
+
 todo
 ---------------------------
-1.replace css3 to jQuery animate
-2.move out css class
-3.dynamic popout position
+
++ dynamic detect width
++ bug of overwrite marker
+
