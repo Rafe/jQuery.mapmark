@@ -8,12 +8,15 @@ Forked project from [/Rafe/jQuery.mapmark](https://github.com/Rafe/jQuery.mapmar
 ##Instalation 
 
 Include jQuery and MarkMap files:
+	<code>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="mapmark/jQuery.mapmark.css" type="text/css"/>
 		<script type="text/javascript" src="mapmark/jQuery.mapmark.js"></script> 
+	</code>
 
 ##Usage:
 Create HTML markup as below:
+	<code>
 		<div id="{GIVE_YOUR_ID}" class="mapmark_canvas">
 		
 			<!-- the image -->
@@ -33,8 +36,10 @@ Create HTML markup as below:
 			<div id="popout-n"> ... <div>
 	
 		</div>
+	</code>
 
 Position you markers with CSS:
+	<code>
 		/*
 		 * Markers (top, left relative to #canvas)
 		 */
@@ -42,20 +47,26 @@ Position you markers with CSS:
 		#mark-2{ top:135px; left: 715px; }
 		#mark-3{ top:233px; left: 700px; }
 		#mark-4{ top:170px; left: 350px; }
+	</code>
 	
 Init Javascrit controll:
+	<code>
 		$("#canvas1").mapmark(".mark",".popout");
+	</code>
 
 ##Additional Features:
 
 Change action from click, to hover:
+	<code>
 		$("#canvas1").mapmark(".mark",".popout",{action:"hover"});
+	</code>
 
 Change theme to black adding CSS class to MapMark root element:
+	<code>
 		<div id="{GIVE_YOUR_ID}" class="mapmark_canvas mapmark_theme_black">
 			...
 		</div>
-
+	</code>
 ##TODO
 + fix hover bug
 + check original project todos
