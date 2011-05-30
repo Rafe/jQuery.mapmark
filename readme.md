@@ -48,7 +48,7 @@ Position you markers with CSS:
 	
 Init Javascrit controll:
 
-	$("#canvas1").mapmark(".mark",".popout");	
+	$("#{GIVE_YOUR_ID}").mapmark(".mark",".popout");	
 
 ##Additional Features:
 
