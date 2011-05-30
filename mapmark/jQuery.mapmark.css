@@ -1,0 +1,101 @@
+.mapmark_canvas{
+	position:relative;	
+}
+
+.mapmark_canvas .mark{
+  width:5px;
+  height:5px;
+  position:absolute;
+  cursor:pointer;
+  z-index:100;
+  background: #FF2400;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
+
+.mapmark_canvas .mark_glow{
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: -15px;
+	left: -15px;
+	border: 3px solid #FF0000;
+	opacity: 0;
+	z-index:0;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-animation-name: 'mapmark_blip';
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+.mapmark_canvas .popout{
+  width:217px;
+  height:60px;
+  position:absolute;
+  z-index: 101;
+}
+
+.mapmark_canvas .popout .inner{
+	position:relative;
+	z-index: 102;
+	left:-10px;
+	padding:7px;
+	background-color:#FFF;
+	border:1px solid #DDD;
+	-webkit-border-bottom-left-radius:7px;
+	-webkit-border-bottom-right-radius:7px;
+	-moz-border-bottom-left-radius:7px;
+	-moz-border-bottom-right-radius:7px;
+	border-bottom-left-radius:7px;
+	border-bottom-right-radius:7px;
+	-webkit-box-shadow:1px 0 5px,#AAA;
+	-moz-box-shadow:1px 0 5px,#AAA;
+	box-shadow:1px 0 5px #AAA;
+}
+
+.mapmark_canvas .popout .arrow{
+  position:relative;
+  z-index: 103;
+  height:6px;
+  width:11px;
+  left:-3px;
+  top:1px;
+  background-image:url("arrow_white.png");
+}
+
+@-webkit-keyframes 'mapmark_blip'
+{		
+	0% {
+		-webkit-transform: scale(.1);	
+		opacity: 0;
+	}
+	1% {
+		-webkit-transform: scale(.1);	
+		opacity: .6;
+	}
+	60% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
+}
+
+/*
+ * theme black
+ */
+.mapmark_theme_black .popout .arrow{
+	background-image:url("arrow_black.png");
+}
+
+.mapmark_theme_black .popout .inner{
+	background:#000;
+	opacity:0.8;
+	color:#FFF;
+}
