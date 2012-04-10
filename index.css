@@ -11,9 +11,16 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
  * Index.css
  */
 body {
-	font:12px Tahoma, arial, sans-serif;
+  text-align:center;
+	font:12px Helvetica, HelveticaNeue, arial, sans-serif;
 	color:#333;
 	padding:20px;
+}
+
+.container {
+  text-align:left;
+  width:960px;
+  margin: 0 auto;
 }
 h1, h2, h3, h4 {
 	font-family: "HelveticaNeue-Medium", Helvetica, sans-serif;
@@ -59,6 +66,6 @@ h2.author{
  * Markers (top, left relative to #canvas)
  */
 #mark-1_1, #mark-2_1{ top:80px; left: 105px; }
-#mark-1_2, #mark-2_2{ top:135px; left: 715px; }
-#mark-1_3, #mark-2_3{ top:233px; left: 700px; }
+#mark-1_2, #mark-2_2{ top:135px; left: 200px; }
+#mark-1_3, #mark-2_3{ top:233px; left: 300px; }
 #mark-1_4, #mark-2_4{ top:170px; left: 350px; }

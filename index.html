@@ -3,19 +3,16 @@
 	<head>
 		<title>jQuery.mapmark</title>
 		
-		<!-- regular page css -->
 		<link rel="stylesheet" href="index.css" type="text/css"/>
-		
-		<!-- jquery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
 		
 		<!-- MapMark: this is what you need to make it work -->
-		
+
 		<!-- 1. mapmark css file (markers and poput default styles) -->
-		<link rel="stylesheet" href="mapmark/jQuery.mapmark.css" type="text/css"/>
+		<link rel="stylesheet" href="mapmark/jquery.mapmark.css" type="text/css"/>
 		
 		<!-- 2. mapmark javascript -->
-		<script type="text/javascript" src="mapmark/jQuery.mapmark.js"></script>
+		<script type="text/javascript" src="mapmark/jquery.mapmark.js"></script>
 		
 		<!-- 3. setupt marker -->
 		<script type="text/javascript">
@@ -38,96 +35,100 @@
 		
 	</head>
 	<body>
-		<h1>jQuery.mapmark</h1>
-		<a class="github_link" href="https://github.com/Rafe/jQuery.mapmark">Github Project: https://github.com/Rafe/jQuery.mapmark</a>
-		<h2 class="author">Author: Jimmy Chao</h2>
-		
-		<p>Contributors:</p>
-		<ul class="contributors">
-			<li><h3>Bruno Tavares: </h3><a href="https://github.com/brunotavares/jQuery.mapmark">Github Fork: https://github.com/brunotavares/jQuery.mapmark</a></li>
-		</ul>
-		
-		<h4 class="example">Example 1: default style and behaviour</h4>
-		
-		<div id="canvas1" class="mapmark_canvas">
-			
-			<!-- the image -->
-			<img src="image.jpg" alt="github example" />
-			
-			<!-- the markers (positioned by css)--> 
-			<div id="mark-1_1" class="mark"><div class="mark_glow"></div></div>
-			<div id="mark-1_2" class="mark"><div class="mark_glow"></div></div>
-			<div id="mark-1_3" class="mark"><div class="mark_glow"></div></div>
-			<div id="mark-1_4" class="mark"><div class="mark_glow"></div></div>
-			
-			<!-- the popouts (positioned automatically) -->
-			<div id="popout-1_1" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Link to home 
-					<a href="http://github.com">github.com</a>
-				</div>
-			</div>
-			<div id="popout-1_2" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Fork it and help us!
-				</div>
-			</div>
-			<div id="popout-1_3" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Use this download button to get the code
-				</div>
-			</div>
-			<div id="popout-1_4" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Found any bugs? Please let us know!
-				</div>
-			</div>
-		</div>
-		
-		<h4 class="example">Example 2: black style and hover behaviour</h4>
-		
-		<div id="canvas2" class="mapmark_canvas mapmark_theme_black">
-			
-			<!-- the image -->
-			<img src="image.jpg" alt="github example" />
-			
-			<!-- the markers (positioned by css)--> 
-			<div id="mark-2_1" class="mark"><div class="markglow"></div></div>
-			<div id="mark-2_2" class="mark"><div class="mark_glow"></div></div>
-			<div id="mark-2_3" class="mark"><div class="mark_glow"></div></div>
-			<div id="mark-2_4" class="mark"><div class="mark_glow"></div></div>
-			
-			<!-- the popouts (positioned automatically) -->
-			<div id="popout-2_1" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Link to home 
-					<a href="http://github.com">github.com</a>
-				</div>
-			</div>
-			<div id="popout-2_2" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Fork it and help us!
-				</div>
-			</div>
-			<div id="popout-2_3" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Use this download button to get the code
-				</div>
-			</div>
-			<div id="popout-2_4" class="popout">
-				<div class="arrow"></div>
-				<div class="inner">
-					Found any bugs? Please let us know!
-				</div>
-			</div>
-			
-		</div>
+    <div class="container">
+      <h1>jQuery.mapmark</h1>
+      <a class="github_link" href="https://github.com/Rafe/jQuery.mapmark">Github Project: https://github.com/Rafe/jQuery.mapmark</a>
+      <h2 class="author">Author: Jimmy Chao</h2>
+      
+      <p>Contributors:</p>
+      <ul class="contributors">
+        <li><h3>Bruno Tavares: </h3><a href="https://github.com/brunotavares/jQuery.mapmark">Github Fork: https://github.com/brunotavares/jQuery.mapmark</a></li>
+      </ul>
+      
+      <h4 class="example">Example 1: default style and behaviour</h4>
+      
+      <div id="canvas1" class="mapmark_canvas">
+        <!-- the image -->
+        <img src="cat.jpg" alt="example" />
+        
+        <!-- the markers (positioned by css)--> 
+        <div id="mark-1_1" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-1_2" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-1_3" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-1_4" class="mark"><div class="mark_glow"></div></div>
+        
+        <!-- the popouts (positioned automatically) -->
+        <div id="popout-1_1" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Link to home 
+            <a href="http://github.com">github.com</a>
+          </div>
+        </div>
+        <div id="popout-1_2" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            U NO FORK ME?
+          </div>
+        </div>
+        <div id="popout-1_3" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Press download button button to get the code
+            <form action="http://github.com/Rafe/jQuery.mapmark" method="GET">
+              <button>Download</button>
+            </form>
+          </div>
+        </div>
+        <div id="popout-1_4" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Found any bugs? Please let us know!
+          </div>
+        </div>
+      </div>
+      
+      <h4 class="example">Example 2: black style and hover behaviour</h4>
+      
+      <div id="canvas2" class="mapmark_canvas mapmark_theme_black">
+        
+        <!-- the image -->
+        <img src="cat.jpg" alt="github example" />
+        
+        <!-- the markers (positioned by css)--> 
+        <div id="mark-2_1" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-2_2" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-2_3" class="mark"><div class="mark_glow"></div></div>
+        <div id="mark-2_4" class="mark"><div class="mark_glow"></div></div>
+        
+        <!-- the popouts (positioned automatically) -->
+        <div id="popout-2_1" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Link to home 
+            <a href="http://github.com">github.com</a>
+          </div>
+        </div>
+        <div id="popout-2_2" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            U NO FORK ME?
+          </div>
+        </div>
+        <div id="popout-2_3" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Use this download button to get the code
+          </div>
+        </div>
+        <div id="popout-2_4" class="popout">
+          <div class="arrow"></div>
+          <div class="inner">
+            Found any bugs? Please let us know!
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/Rafe/jQuery.mapmark"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>   </div>
 	</body>
 </html>

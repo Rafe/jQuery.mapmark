@@ -1,7 +1,7 @@
 (function($){
   
   //animation easing settings
-  $.extend($.easing,{
+  $.extend($.easing, {
     easeInQuad: function (x, t, b, c, d) {
       return c*(t/=d)*t + b;
     },
@@ -11,15 +11,17 @@
   });
 
   //cache objects and setting
-  var markers,popouts,isInPopout = false,
+  var markers,
+      popouts,
+      isInPopout = false,
       setting = {
-	    markerHeight: 0,
-	    markerWidth	: 0,
-	    speed 		: 400,
-	    easeIn 		: "easeInQuad",
-	    easeOut 	: "easeOutQuad",
-	    action		: "click"
-	  };
+        markerHeight: 0,
+        markerWidth	: 0,
+        speed 		: 400,
+        easeIn 		: "easeInQuad",
+        easeOut 	: "easeOutQuad",
+        action		: "click"
+      };
   
   //init function, hide the popout objects and save the width and height of marker
   //@markers : the markers objects
@@ -133,8 +135,7 @@
 
   //main function: 
   //usage: $("markers").mapmark("popouts-class");
-  $.fn.mapmark = function(markerClass,popoutClass,options)
-  {
+  $.fn.mapmark = function(markerClass,popoutClass,options) {
     //set options
     $.extend(setting,options);
 

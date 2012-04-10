@@ -3,8 +3,6 @@
 Enables map mark feature on images and other elements from website. This enables you to give some further details
 and explanations about something in your website/app.
 
-Forked project from [/Rafe/jQuery.mapmark](https://github.com/Rafe/jQuery.mapmark).
-
 ##Instalation 
 
 Include jQuery and MarkMap files:
@@ -61,7 +59,3 @@ Change theme to black adding CSS class to MapMark root element:
 	<div id="{GIVE_YOUR_ID}" class="mapmark_canvas mapmark_theme_black">
 		...
 	</div>
-
-##TODO
-+ fix hover bug
-+ check original project todos
