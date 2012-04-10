@@ -33,35 +33,31 @@
   };
 
   //animation states
-  var initState = function(position,popout){
-    return {
-      left:position.left ,
-      top:position.top ,
-      diaplay:"block",
-      visibility:"visible",
-      opacity:0
-    };
-  },
+  var state = {
+    init: function(position, popout){
+      return {
+        left:position.left ,
+        top:position.top ,
+        diaplay:"block",
+        visibility:"visible",
+        opacity:0
+      };
+    },
 
-  midState = function(position,popout){
-    return {
-      top:position.top + (setting.markerHeight / 2),
-      opacity:1
-    };
-  },
+    mid: function(position, popout){
+      return {
+        top:position.top + (setting.markerHeight / 2),
+        opacity:1
+      };
+    },
 
-  endState = function(position,popout){
-    return {
-      top:position.top + setting.markerHeight,
-      opacity:0
-    };
-  };
-
-  //flag for clear the popout if there's other active
-  var activeHiding;
-  var clearActivePopout = function(){
-    $(setting.popoutClass).hide();
-  };
+    end: function(position, popout){
+      return {
+        top:position.top + setting.markerHeight,
+        opacity:0
+      };
+    }
+  }
 
   //return the matched popout for marker by second part of id:
   //ex: mark-test will be matched with popout-test 
@@ -69,11 +65,19 @@
     var popoutid = setting.popoutPrefix+"-"+id.split("-")[1];
     return $(popoutid);
   };
-  
+
   //return the matched marker for corresponding popoutid
   var matchMarker = function(id){
     var markerid = setting.markerPrefix+"-"+id.split("-")[1];
     return $(markerid);
+  };
+
+  //flag for clear the popout if there's other active
+  var activeHiding;
+
+  //hide all popout
+  var clearActivePopout = function(){
+    $(setting.popoutClass).hide();
   };
 
   //set other markers's z-index to 0 to avoid the popout overwrited by marker
@@ -98,23 +102,29 @@
       clearTimeout(activeHiding);
     }
 
-    popout.show(); 
-    //popout.hover(keepPopout,outPopout);
-
     var position = self.position();
-    popout.css(initState(position,popout))
-      .animate(midState(position,popout),setting.speed,setting.easeIn);
+    popout.show(); 
+    popout.css(state.init(position, popout))
+      .animate(state.mid(position, popout), setting.speed, setting.easeIn);
   };
 
   var hidePopout = function(){
-    if(isInPopout){ return; }
+    if(isInPopout) return;
+
     var self = $(this);
     var popout = matchPopout(self.attr("id"));
     var hideAndRemove = function(){
-      popout.animate(endState(self.position(),popout),setting.speed,setting.easeOut,self.hide);
+      popout.animate(
+          state.end(self.position(), popout),
+          setting.speed, setting.easeOut,
+          self.hide
+      );
     };
+
     activeHiding = setTimeout(hideAndRemove,200);
-    setTimeout(restoreMarker,200 + setting.speed);
+
+    setTimeout(restoreMarker, 200 + setting.speed);
+
   };
 
   var keepPopout = function(){
@@ -133,9 +143,14 @@
     hidePopout.call(marker);
   };
 
-  //main function: 
-  //usage: $("markers").mapmark("popouts-class");
-  $.fn.mapmark = function(markerClass,popoutClass,options) {
+  /*
+   * mapmark
+   * -----
+   * @markerClass : selector for markers
+   * @popoutClass : selector for popouts
+   * @options : setting options
+   */
+  $.fn.mapmark = function(markerClass, popoutClass, options) {
     //set options
     $.extend(setting,options);
 

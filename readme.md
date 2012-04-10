@@ -59,3 +59,9 @@ Change theme to black adding CSS class to MapMark root element:
 	<div id="{GIVE_YOUR_ID}" class="mapmark_canvas mapmark_theme_black">
 		...
 	</div>
+
+##Todo:
+
+* Add tests
+* Improve hover action
+* Change color of marker
